@@ -198,7 +198,7 @@ if (typeof(localStorage.getItem('currentslide'))!='undefined' && localStorage.ge
 	
  } 
  
-	if(nextSlideNo <= 8){//number 3 is number of total slides present
+	if(nextSlideNo <= 4){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -302,10 +302,10 @@ if(direction == 'b') {
 //custom slide changes ends here....
 
 	else{
-	if(page_id <= 8){
+	if(page_id <= 4){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 9){
+		if(page_id == 5){
             flag=1;
         }
 	}
@@ -385,28 +385,16 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="1/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
 	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="2/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide2/slide2.css" media="screen"/><div class="background"><img src="slide2/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
     case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="3/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="background"><img src="slide3/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
 	case 4:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="4/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="5/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="6/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 7:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="7/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 8:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="8/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide4/slide2.css" media="screen"/><div class="background"><img src="slide4/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
 }
 
@@ -548,3 +536,71 @@ $(document).ready(function(){
 		$('.touchbtn').css("display","block");
 	})
 })
+
+/*--------------------- animation javascript -----------------------*/
+
+function s3_pop1() {
+	$('.s3_1').css("display","block");
+	$('.s3_c1ose1').css("display","block");
+	$('.s3_pop1').css("display","none");
+}
+
+function s3_pop2() {
+	$('.s3_2').css("display","block");
+	$('.s3_c1ose1').css("display","block");
+	$('.s3_pop2').css("display","none");
+}
+
+function s3_pop3() {
+	$('.s3_3').css("display","block");
+	$('.s3_c1ose1').css("display","block");
+	$('.s3_pop3').css("display","none");
+}
+
+function s3_pop4() {
+	$('.s3_4').css("display","block");
+	$('.s3_c1ose1').css("display","block");
+	$('.s3_pop4').css("display","none");
+}
+
+function s3_close1() {
+	$('.s3_1').css("display","none");
+	$('.s3_2').css("display","none");
+	$('.s3_3').css("display","none");
+	$('.s3_4').css("display","none");
+	$('.s3_c1ose1').css("display","none");
+	$('.s3_pop1').css("display","block");
+	$('.s3_pop2').css("display","block");
+	$('.s3_pop3').css("display","block");
+	$('.s3_pop4').css("display","block");
+}
+
+
+/*--------------------- animation javascript -----------------------*/
+
+function pop_open() {
+	$('.popup').css("display","block");
+	$('.pop_close').css("display","block");
+	$('.pop_open').css("display","none");
+}
+
+function pop_close() {
+	$('.popup').css("display","none");
+	$('.pop_close').css("display","none");
+	$('.pop_open').css("display","block");
+}
+
+
+/*--------------------- animation javascript -----------------------*/
+
+function pop_open1() {
+	$('.popup1').css("display","block");
+	$('.pop_close1').css("display","block");
+	$('.pop_open1').css("display","none");
+}
+
+function pop_close1() {
+	$('.popup1').css("display","none");
+	$('.pop_close1').css("display","none");
+	$('.pop_open1').css("display","block");
+}
