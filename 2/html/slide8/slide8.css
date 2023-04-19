@@ -18,13 +18,12 @@
   z-index: 15;
 }
 
-
 .pop_open {
 	position: absolute;
-	height: 120px;
-	width: 150px;
-	right: 0px;
-	bottom: 0px;
+  right: 0px;
+  bottom: 0px;
+  width: 150px;
+  height: 150px;
 	z-index: 10;
 }
 

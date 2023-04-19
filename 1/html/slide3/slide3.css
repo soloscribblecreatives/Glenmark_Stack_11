@@ -10,14 +10,27 @@
 	z-index: 1;
 }
 
-.heart {
+.popup {
   position: absolute;
-  left: 891px;
-  top: 104px;
-  width: 97px;
-  height: 77px;
-  animation: pulse 2s infinite;
-  animation-delay: 0.5s;
-  animation-fill-mode: both;
-  z-index: 2;
+  width: 1024px;
+  height: 768px;
+  display: none;
+  z-index: 15;
+}
+
+.pop_open {
+	position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 150px;
+  height: 150px;
+	z-index: 10;
+}
+
+.pop_close {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	display: none;
+	z-index: 20;
 }

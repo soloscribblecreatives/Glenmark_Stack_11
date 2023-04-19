@@ -198,7 +198,7 @@ if (typeof(localStorage.getItem('currentslide'))!='undefined' && localStorage.ge
 	
  } 
  
-	if(nextSlideNo <= 8){//number 3 is number of total slides present
+	if(nextSlideNo <= 3){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -302,10 +302,10 @@ if(direction == 'b') {
 //custom slide changes ends here....
 
 	else{
-	if(page_id <= 8){
+	if(page_id <= 3){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 9){
+		if(page_id == 4){
             flag=1;
         }
 	}
@@ -395,18 +395,6 @@ switch(pg_id){
 	break;
 	case 4:
 	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="4/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="5/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="6/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 7:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="7/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 8:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="8/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
 	break;
 }
 
