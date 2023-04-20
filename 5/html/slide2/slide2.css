@@ -12,10 +12,10 @@
 
 .s2_2 {
   position: absolute;
-  left: 113px;
-  top: 89px;
-  width: 719px;
-  height: 151px;
+  left: 236px;
+  top: 72px;
+  width: 553px;
+  height: 179px;
   animation: zoomIn 0.5s;
   animation-delay: 0.2s;
   animation-fill-mode: both;
@@ -24,10 +24,10 @@
 
 .s2_3 {
   position: absolute;
-  left: 71px;
-  top: 283px;
-  width: 500px;
-  height: 466px;
+  left: 45px;
+  top: 300px;
+  width: 529px;
+  height: 491px;
   animation: fadeInLeft 0.5s;
   animation-delay: 0.8s;
   animation-fill-mode: both;
@@ -36,10 +36,10 @@
 
 .s2_4 {
   position: absolute;
-  left: 525px;
-  top: 283px;
-  width: 500px;
-  height: 466px;
+  left: 516px;
+  top: 300px;
+  width: 529px;
+  height: 491px;
   animation: fadeInRight 0.5s;
   animation-delay: 1.4s;
   animation-fill-mode: both;
