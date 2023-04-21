@@ -7,4 +7,56 @@
 	position: absolute;
 	width: 1024px;
 	height: 768px;
+	z-index: 1;
+}
+
+.popup {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 15;
+	display: none;
+}
+
+.pop_open {
+	position: absolute;
+  left: 947px;
+  top: 692px;
+  width: 77px;
+  height: 76px;
+	z-index: 5;
+}
+
+.pop_close {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 20;
+	display: none;
+}
+
+
+.popup1 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 15;
+	display: none;
+}
+
+.pop_open1 {
+	position: absolute;
+  left: 868px;
+  top: 692px;
+  width: 77px;
+  height: 76px;
+	z-index: 5;
+}
+
+.pop_close1 {
+	position: absolute;
+	width: 1024px;
+	height: 768px;
+	z-index: 20;
+	display: none;
 }

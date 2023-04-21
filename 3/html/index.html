@@ -64,7 +64,7 @@ if (typeof(localStorage.getItem("currentcustomslideflag"))!='undefined' && local
 	
 	switch(custcomslideid){
 		case 1:
-		content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div>';
+		content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div><div class="popup"><img src="slide1/2.jpg" width="1024" height="768" alt=""></div><div class="pop_open" onclick="pop_open()"></div><div class="pop_close" onclick="pop_close()"></div><div class="popup1"><img src="slide1/3.jpg" width="1024" height="768" alt=""></div><div class="pop_open1" onclick="pop_open1()"></div><div class="pop_close1" onclick="pop_close1()"></div>';
 		break;
 	}
 
@@ -75,7 +75,7 @@ if (typeof(localStorage.getItem("currentcustomslideflag"))!='undefined' && local
 	 
 }else{
 
-$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div>');
+$("#main_content").html('<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div><div class="popup"><img src="slide1/2.jpg" width="1024" height="768" alt=""></div><div class="pop_open" onclick="pop_open()"></div><div class="pop_close" onclick="pop_close()"></div><div class="popup1"><img src="slide1/3.jpg" width="1024" height="768" alt=""></div><div class="pop_open1" onclick="pop_open1()"></div><div class="pop_close1" onclick="pop_close1()"></div>');
 
 }
 
