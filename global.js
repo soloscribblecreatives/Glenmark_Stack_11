@@ -198,7 +198,7 @@ if (typeof(localStorage.getItem('currentslide'))!='undefined' && localStorage.ge
 	
  } 
  
-	if(nextSlideNo <= 6){//number 3 is number of total slides present
+	if(nextSlideNo <= 3){//number 3 is number of total slides present
 	// alert(nextSlideNo);
 	var tempNext = localStorage.getItem(currentContentId+"_"+contentName+"_slideNo_"+nextSlideNo);
 
@@ -302,10 +302,10 @@ if(direction == 'b') {
 //custom slide changes ends here....
 
 	else{
-	if(page_id <= 6){
+	if(page_id <= 3){
 		page_id = page_id + 1;
 		//alert(page_id);
-		if(page_id == 7){
+		if(page_id == 4){
             flag=1;
         }
 	}
@@ -385,22 +385,13 @@ currentSlide();
 var selectedContentPath='';
 switch(pg_id){
 	case 1:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="1/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide2.css" media="screen"/><div class="background"><img src="slide1/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
 	case 2:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="2/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	content='<link rel="stylesheet" type="text/css" href="slide1/slide2.css" media="screen"/><div class="background"><img src="slide2/1.jpg" width="1024" height="768" alt=""></div>';
 	break;
-    case 3:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="3/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 4:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="4/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 5:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="5/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
-	break;
-	case 6:
-	content='<link rel="stylesheet" type="text/css" href="slide1/slide1.css" media="screen"/><iframe src="6/html/index.html" class="background1" height="768" width="1024" frameBorder="0" title="Iframe Example"></iframe>';
+	case 3:
+	content='<link rel="stylesheet" type="text/css" href="slide3/slide3.css" media="screen"/><div class="background"><img src="slide3/1.jpg" width="1024" height="768" alt=""></div><div class="score" onclick="score()"><img src="slide3/2.jpg" width="1024" height="768" alt=""></div><div class="fact" onclick="fact()"><img src="slide3/3.jpg" width="1024" height="768" alt=""></div><div class="yoga" onclick="yoga()"><img src="slide3/4.jpg" width="1024" height="768" alt=""></div><div class="telma" onclick="telma()"><img src="slide3/5.jpg" width="1024" height="768" alt=""></div><div class="halsanaHit" onclick="halsanaHit()"></div><div class="halsana"><img src="slide3/Halsana.png"></div><div class="virasanaHit" onclick="virasanaHit()"></div><div class="virasana"><img src="slide3/Virasana.png"></div><div class="savasanaHit" onclick="savasanaHit()"></div><div class="savasana"><img src="slide3/Savasana.png"></div><div class="balasanaHit" onclick="balasanaHit()"></div><div class="balasana"><img src="slide3/Balasana.png"></div><div class="konasanaHit" onclick="konasanaHit()"></div><div class="konasana"><img src="slide3/Konasana.png"></div><video loop id="halsana" onclick="halsanaClose()" width="1024" height="768" src="slide3/Halsana.mp4" type="video/mp4"></video><video loop id="virasana" onclick="virasanaClose()" width="1024" height="768" src="slide3/Virasana.mp4" type="video/mp4"></video><video loop id="savasana" onclick="savasanaClose()" width="1024" height="768" src="slide3/Savasana.mp4" type="video/mp4"></video><video loop id="balasana" onclick="balasanaClose()" width="1024" height="768" src="slide3/Balasana.mp4" type="video/mp4"></video><video loop id="konasana" onclick="konasanaClose()" width="1024" height="768" src="slide3/Konasana.mp4" type="video/mp4"></video><audio id="correct" src="slide3/Correct.mp3" type="audio/mpeg"></audio><audio id="success" src="slide3/Success.mp3" type="audio/mpeg"></audio>';
 	break;
 }
 
@@ -542,3 +533,184 @@ $(document).ready(function(){
 		$('.touchbtn').css("display","block");
 	})
 })
+
+
+
+/*--------------------- animation javascript -----------------------*/
+
+function pop_open() {
+	$('.popup').css("display","block");
+	$('.pop_close').css("display","block");
+	$('.pop_open').css("display","none");
+}
+
+function pop_close() {
+	$('.popup').css("display","none");
+	$('.pop_close').css("display","none");
+	$('.pop_open').css("display","block");
+}
+
+
+/*--------------------------Javascript Animation-----------------------------*/
+
+function halsanaHit() {	
+	$('.halsana').css("display","block");
+	$(".halsana").addClass("selected");
+	
+	document.getElementById("correct").play();
+	vid = document.getElementById("halsana");
+	vid.currentTime= 0;
+	vid.play();
+	$('#halsana').css("display","block");
+}
+
+function halsanaClose() {	
+	$('#halsana').css("display","none");
+	$('.halsanaHit').css("display","none");
+	
+	if ($(".konasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".savasana").hasClass("selected") ||
+	   $(".konasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".konasana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".savasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".balasana").hasClass("selected"))
+	{
+		$('.balasanaHit, .virasanaHit, .savasanaHit, .halsanaHit, .konasanaHit').css("display","none");
+		setTimeout(function() {
+			document.getElementById("success").play();
+			$('.score').css("display","block");
+		}, 1000);
+	}
+}
+
+
+
+function virasanaHit() {	
+	$('.virasana').css("display","block");
+	$(".virasana").addClass("selected");
+	
+	document.getElementById("correct").play();
+	vid = document.getElementById("virasana");
+	vid.currentTime= 0;
+	vid.play();
+	$('#virasana').css("display","block");
+}
+
+function virasanaClose() {	
+	$('#virasana').css("display","none");
+	$('.virasanaHit').css("display","none");
+	
+	if ($(".halsana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".balasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".balasana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".konasana").hasClass("selected"))
+	{
+		$('.virasanaHit, .savasanaHit, .balasanaHit, .konasanaHit, .halsanaHit').css("display","none");
+		setTimeout(function() {
+			document.getElementById("success").play();
+			$('.score').css("display","block");
+		}, 1000);
+	}
+}
+
+
+
+function savasanaHit() {	
+	$('.savasana').css("display","block");
+	$(".savasana").addClass("selected");
+	
+	document.getElementById("correct").play();
+	vid = document.getElementById("savasana");
+	vid.currentTime= 0;
+	vid.play();
+	$('#savasana').css("display","block");
+}
+
+function savasanaClose() {	
+	$('#savasana').css("display","none");
+	$('.savasanaHit').css("display","none");
+	
+	if ($(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".balasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".balasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".konasana").hasClass("selected"))
+	{
+		$('.savasanaHit, .virasanaHit, .balasanaHit, .konasanaHit, .halsanaHit').css("display","none");
+		setTimeout(function() {
+			document.getElementById("success").play();
+			$('.score').css("display","block");
+		}, 1000);
+	}
+}
+
+
+
+function balasanaHit() {	
+	$('.balasana').css("display","block");
+	$(".balasana").addClass("selected");
+
+	document.getElementById("correct").play();
+	vid = document.getElementById("balasana");
+	vid.currentTime= 0;
+	vid.play();
+	$('#balasana').css("display","block");
+}
+
+function balasanaClose() {	
+	$('#balasana').css("display","none");
+	$('.balasanaHit').css("display","none");
+	
+	if ($(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".savasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".konasana").hasClass("selected") ||
+	   $(".savasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".konasana").hasClass("selected"))
+	{
+		$('.balasanaHit, .virasanaHit, .savasanaHit, .konasanaHit, .halsanaHit').css("display","none");
+		setTimeout(function() {
+			document.getElementById("success").play();
+			$('.score').css("display","block");
+		}, 1000);
+	}
+}
+
+
+
+function konasanaHit() {	
+	$('.konasana').css("display","block");
+	$(".konasana").addClass("selected");
+	
+	document.getElementById("correct").play();
+	vid = document.getElementById("konasana");
+	vid.currentTime= 0;
+	vid.play();
+	$('#konasana').css("display","block");
+}
+
+function konasanaClose() {	
+	$('#konasana').css("display","none");
+	$('.konasanaHit').css("display","none");
+	
+	if ($(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".savasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".halsana").hasClass("selected") && $(".savasana").hasClass("selected") && $(".balasana").hasClass("selected") ||
+	   $(".savasana").hasClass("selected") && $(".virasana").hasClass("selected") && $(".balasana").hasClass("selected"))
+	{
+		$('.balasanaHit, .virasanaHit, .savasanaHit, .konasanaHit, .halsanaHit').css("display","none");
+		setTimeout(function() {
+			document.getElementById("success").play();
+			$('.score').css("display","block");
+		}, 1000);
+	}
+}
+
+
+
+function score() {	
+	$('.fact').css("display","block");
+}
+
+function fact() {	
+	$('.yoga').css("display","block");
+}
+
+function yoga() {	
+	$('.telma').css("display","block");
+}
